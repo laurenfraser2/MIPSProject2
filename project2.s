@@ -18,6 +18,7 @@ invalid_empty: .asciiz "Input is Empty"
       		li $v0, 4
       		syscall
       		
-      		
+      		li $v0, 10 #exits
+      		syscall
       		
       		
