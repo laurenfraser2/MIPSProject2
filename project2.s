@@ -8,4 +8,10 @@ invalid_empty: .asciiz "Input is Empty"
       	li $a1, 90000 # allocates buffer space for string
       	syscall
       	
+      	lb $t0, 0($a0)
+      	beq $t0, 10, Invalid #if the first chat is a new line
+      	beq $t0, $0, Invalid #if the first char is null
       	
+      
+      		
+      		
