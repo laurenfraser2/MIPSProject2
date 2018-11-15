@@ -12,6 +12,12 @@ invalid_empty: .asciiz "Input is Empty"
       	beq $t0, 10, Invalid #if the first chat is a new line
       	beq $t0, $0, Invalid #if the first char is null
       	
-      
+      	
+      	Invalid:
+      		la $a0, invalid_empty
+      		li $v0, 4
+      		syscall
+      		
+      		
       		
       		
