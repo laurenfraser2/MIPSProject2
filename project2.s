@@ -28,5 +28,11 @@
 	 addi $a0, $a0, 1   #continue the string pointer
 	 addi $t0, $t0, 1
 	 j lengthLoop
+	endLoop:
+	 beqz $t0, emptyInput   #print empty input message if length is 0
+	 slti $t3, $t0, 5      #check whether or not count is > 4
+	 beqz $t3, tooLong #print out too long message if count > 4
+	 move $a0, $t4
+	 
 	 
 	 
