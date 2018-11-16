@@ -101,7 +101,11 @@
 	  beq $s0, $s2, twoPower
 	  beq $s0, $s1, onePower
 	  beq $s0, $s5, zeroPower
-	 
+	zeroPower:
+	  li $s6, 1
+	  mult $s4, $s6
+	  mflo $s7
+	  add $t7, $t7, $s7
 
 	 
 	 
