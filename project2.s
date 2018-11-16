@@ -69,7 +69,10 @@
 	  la $a0, invalidBaseMessage
 	  syscall
 	  j exit
-	 
+	setUp:
+	  move $a0, $t4
+	  addi $t7, $t7, 0  #Initialize decimal sum to zero
+	  add $s0, $s0, $t0
 	 
 	 
 	 
