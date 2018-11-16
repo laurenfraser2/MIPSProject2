@@ -64,7 +64,11 @@
 	continue:
 	  addi $a0, $a0, 1
 	  j isValid
-	 
+	invalidBase:
+	  li $v0, 4
+	  la $a0, invalidBaseMessage
+	  syscall
+	  j exit
 	 
 	 
 	 
