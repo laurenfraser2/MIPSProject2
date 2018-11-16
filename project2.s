@@ -78,6 +78,11 @@
 	  li $s2, 2
 	  li $s1, 1
 	  li $s5, 0
+	convertString:
+	  lb $s4, 0($a0)
+	  beqz $s4, displaySum
+	  beq $s4, $t1, displaySum
+	  slti $t6, $s4, 58
 	 
 	 
 
