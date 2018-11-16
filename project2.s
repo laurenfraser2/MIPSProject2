@@ -21,3 +21,9 @@
 	 addi $t0, $t0, 0  #start count at zero
 	 addi $t1, $t1, 10  #put character into t1
 	 add $t4, $t4, $a0  #keep what was originally in a0
+	lengthLoop:
+	 lb $t2, 0($a0)   #Load the next character to t2
+	 beqz $t2, endLoop   #End loop if null character is reached
+	 beq $t2, $t1, endLoop   #End loop if end-of-line is detected
+	 
+	 
