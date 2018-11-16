@@ -44,6 +44,8 @@
 	  la $a0, tooLongMessage
 	  syscall
 	  j exit
+	 isValid:
+	  lb $t5, 0($a0)
 	 
 	 
 	 
