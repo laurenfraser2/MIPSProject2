@@ -106,6 +106,7 @@
 	  mult $s4, $s6
 	  mflo $s7
 	  add $t7, $t7, $s7
-
+	onePower:
+	  li $s6, 32
 	 
 	 
