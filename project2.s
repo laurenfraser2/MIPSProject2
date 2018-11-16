@@ -94,6 +94,9 @@
 	 letters:
 	  addi $s4, $s4, -55
 	  j nextStep
+	 lowletters:
+	  addi $s4, $s4, -87
+	  
 	 
 
 	 
