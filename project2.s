@@ -57,7 +57,11 @@
 	  slti $t6, $t5, 87    #Check if the character is less than V(ascii value of 86)
 	  bne $t6, $zero, continue
 	  slti $t6, $t5, 97    #Check if the character is less than a(ascii value 97)
-	 
+	  bne $t6, $zero, invalidBase
+	  slti $t6, $t5, 118   #Check if the character is less than v(ascii value 118)
+	  bne $t6, $zero, continue
+	  bgt $t5, 118, invalidBase   #Check if the character is greater than x(ascii value 118)
+
 	 
 	 
 	 
