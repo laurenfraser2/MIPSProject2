@@ -91,6 +91,9 @@
 	 nums:
 	  addi $s4, $s4, -48
 	  j nextStep
+	 letters:
+	  addi $s4, $s4, -55
+	  j nextStep
 	 
 
 	 
