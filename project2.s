@@ -33,6 +33,7 @@
 	 slti $t3, $t0, 5      #check whether or not count is > 4
 	 beqz $t3, tooLong #print out too long message if count > 4
 	 move $a0, $t4
-	 
+	 j isValid
+
 	 
 	 
