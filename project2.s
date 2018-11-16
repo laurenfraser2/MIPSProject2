@@ -88,7 +88,9 @@
 	  bne $t6, $zero, letters
 	  slti $t6, $s4, 118
 	  bne $t6, $zero, lowletters
-	 
+	 nums:
+	  addi $s4, $s4, -48
+	  j nextStep
 	 
 
 	 
