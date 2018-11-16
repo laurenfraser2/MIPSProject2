@@ -1,12 +1,13 @@
 .data
-char_array: .space 90000 #create space for characters
-invalid_empty: .asciiz "Input is empty."
-invalid_input: .asciiz "Invalid base-32 number."
-longInput: .asciiz "Input is too long." 
+    emptyInputMessage:	.asciiz "Input is empty."
+    tooLongMessage: .asciiz "Input is too long."
+    invalidBaseMessage:   .asciiz "Invalid base-34 number."
+    userInput:		.space 90000
+
 .text
   main:
  	li $v0, 8  # code call to get input from a user
- 	la $a0, char_array #loads buffer into address
+ 	la $a0, input #loads buffer into address
       	li $a1, 90000 # allocates buffer space for string
       	syscall
       	
@@ -36,17 +37,18 @@ longInput: .asciiz "Input is too long."
     	lb $t0, 3($a0)
     	sb $t0, 3($a1)
     	addi $a0, $a0, 3 
-      	
+      	syscall 
       	TooLong:
       		la $a0, longInput
       		li $v0, 4
+      		syscall
       		
       	exitLoop:
       		beqz $s2, InvalidEmpty
       		syscall
       	
       	InvalidEmpty: #error message for empty input
-      		la $a0, invalid_empty
+      		la $a0, InvalidEmpty
       		li $v0, 4
       		syscall
       		
@@ -72,11 +74,11 @@ longInput: .asciiz "Input is too long."
       		blt $t0, 97, InvalidBN #Past scope of A-V
       		blt $t0, 118, convertSet #these are the lowercase a-v
       		blt $t0, 128, InvalidBN #everything else is invalid 
-      		
+      		syscall
       	skip:
     	addi $a0, $a0, 1
     	jal loop
-    	
+    	syscall
       	convertSet:
 
 		move $a0, $t4
