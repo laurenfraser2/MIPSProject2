@@ -48,7 +48,10 @@
 	  lb $t5, 0($a0)
 	  beqz $t5, setUp  #End loop if null character is reached
 	  beq $t5, $t1, setUp  #End loop if end-of-line character is detected
-	 
+	  slti $t6, $t5, 48    #Character is less than 0 (ascii value of 48)
+	  bne $t6, $zero, invalidBase
+	  slti $t6, $t5, 58    #Character is less than or = to 9 (ascii value of 57)
+	  bne $t6, $zero, continue
 	 
 	 
 	 
