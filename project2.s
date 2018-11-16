@@ -96,7 +96,11 @@
 	  j nextStep
 	 lowletters:
 	  addi $s4, $s4, -87
-	  
+	 nextStep:
+	  beq $s0, $s3, threePower
+	  beq $s0, $s2, twoPower
+	  beq $s0, $s1, onePower
+	  beq $s0, $s5, zeroPower
 	 
 
 	 
