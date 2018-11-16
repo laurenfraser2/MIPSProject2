@@ -46,7 +46,8 @@
 	  j exit
 	 isValid:
 	  lb $t5, 0($a0)
-	 
+	  beqz $t5, setUp  #End loop if null character is reached
+	  beq $t5, $t1, setUp  #End loop if end-of-line character is detected
 	 
 	 
 	 
