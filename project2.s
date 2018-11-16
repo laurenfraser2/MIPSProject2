@@ -39,7 +39,11 @@
 	 la $a0, emptyInputMessage
 	 syscall
 	 j exit
-	 
+	 tooLong:
+	  li $v0, 4
+	  la $a0, tooLongMessage
+	  syscall
+	  j exit
 	 
 	 
 	 
