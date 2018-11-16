@@ -61,7 +61,9 @@
 	  slti $t6, $t5, 118   #Check if the character is less than v(ascii value 118)
 	  bne $t6, $zero, continue
 	  bgt $t5, 118, invalidBase   #Check if the character is greater than x(ascii value 118)
-
+	continue:
+	  addi $a0, $a0, 1
+	  j isValid
 	 
 	 
 	 
