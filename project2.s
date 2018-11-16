@@ -130,6 +130,10 @@
 	  addi $s0, $s0, -1
 	  addi $a0, $a0, 1
 	  j convertString
+        displaySum:
+	  li $v0, 1
+	  move $a0, $t7
+	  syscall
 	
 	
 	
