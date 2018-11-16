@@ -34,6 +34,21 @@
 	 beqz $t3, tooLong #print out too long message if count > 4
 	 move $a0, $t4
 	 j isValid
+	emptyInput:
+	 li $v0, 4
+	 la $a0, emptyInputMessage
+	 syscall
+	 j exit
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 
 	 
 	 
