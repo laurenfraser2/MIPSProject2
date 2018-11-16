@@ -52,7 +52,11 @@
 	  bne $t6, $zero, invalidBase
 	  slti $t6, $t5, 58    #Character is less than or = to 9 (ascii value of 57)
 	  bne $t6, $zero, continue
-	 
+	  slti $t6, $t5, 65    #Check if the character is less than A (ascii value of 65)
+	  bne $t6, $zero, invalidBase
+	  slti $t6, $t5, 87    #Check if the character is less than V(ascii value of 86)
+	  bne $t6, $zero, continue
+	  slti $t6, $t5, 97    #Check if the character is less than a(ascii value 97)
 	 
 	 
 	 
