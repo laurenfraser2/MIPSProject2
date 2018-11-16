@@ -83,6 +83,11 @@
 	  beqz $s4, displaySum
 	  beq $s4, $t1, displaySum
 	  slti $t6, $s4, 58
+	  bne $t6, $zero, nums
+	  slti $t6, $s4, 87
+	  bne $t6, $zero, letters
+	  slti $t6, $s4, 118
+	  bne $t6, $zero, lowletters
 	 
 	 
 
